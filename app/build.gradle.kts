@@ -75,6 +75,15 @@ dependencies {
 
     implementation("com.google.android.material:material:1.10.0")
 
+    // Navigation Fragment
+    implementation("androidx.navigation:navigation-fragment-ktx:2.9.6")
+
+    // Navigation UI (required if using BottomNavigationView with navController)
+    implementation("androidx.navigation:navigation-ui-ktx:2.9.6")
+
+    implementation("com.github.PhilJay:MPAndroidChart:v3.1.0")
+
+
 
 
 }

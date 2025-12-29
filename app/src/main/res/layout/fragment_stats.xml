@@ -1,29 +1,55 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/statsRoot"
+    android:id="@+id/statsFragment"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="16dp">
 
     <LinearLayout
-        android:id="@+id/rowMonthSelector"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="10dp"
-        android:layout_gravity="end"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:paddingHorizontal="10dp">
 
+        <!-- Left: Title -->
         <TextView
-            android:id="@+id/tvMonthSelector"
+            android:id="@+id/tvHeaderStats"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Stats"
+            android:textSize="22sp"
+            android:textStyle="bold" />
+
+        <!-- Right: Month Selector -->
+        <LinearLayout
+            android:id="@+id/rowMonthSelector"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:padding="4dp"
-            android:text="Dec, 2025 ▼"
-            android:textAppearance="@style/TextAppearance.Material3.TitleMedium"
-            android:textStyle="bold" />
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tvMonthSelector"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="4dp"
+                android:text="Dec, 2025"
+                android:textAppearance="@style/TextAppearance.Material3.TitleMedium"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:padding="2dp"
+                android:src="@drawable/ic_down"
+                app:tint="@android:color/white" />
+        </LinearLayout>
     </LinearLayout>
+
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -38,8 +64,7 @@
             android:layout_height="wrap_content"
             android:layout_marginEnd="8dp"
             android:layout_weight="1"
-            app:cardCornerRadius="16dp"
-            app:cardElevation="6dp">
+            app:cardCornerRadius="16dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -60,9 +85,9 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="6dp"
                     android:text="₹0"
+                    android:fontFamily="@font/montserrat_semibold"
                     android:textAppearance="@style/TextAppearance.Material3.TitleLarge"
-                    android:textColor="@android:color/holo_green_dark"
-                    android:textStyle="bold" />
+                    android:textColor="@android:color/holo_green_dark" />
             </LinearLayout>
         </com.google.android.material.card.MaterialCardView>
 
@@ -73,8 +98,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:layout_weight="1"
-            app:cardCornerRadius="16dp"
-            app:cardElevation="6dp">
+            app:cardCornerRadius="16dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -95,13 +119,20 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="6dp"
                     android:text="₹0"
+                    android:fontFamily="@font/montserrat_semibold"
                     android:textAppearance="@style/TextAppearance.Material3.TitleLarge"
-                    android:textColor="@android:color/holo_red_dark"
-                    android:textStyle="bold" />
+                    android:textColor="@android:color/holo_red_dark" />
             </LinearLayout>
         </com.google.android.material.card.MaterialCardView>
 
     </LinearLayout>
+
+
+    <com.github.mikephil.charting.charts.PieChart
+        android:id="@+id/pieChart"
+        android:layout_width="match_parent"
+        android:layout_height="260dp"
+        android:layout_margin="16dp" />
 
 
     <TextView

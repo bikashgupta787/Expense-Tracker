@@ -1,0 +1,16 @@
+//1- Add Delete-icon in home screeen while swiping to delete an item
+//2- color of the app to be blue variant
+//3- income / expense card view looks bad in stats fragment, not proper ui
+4- save transaction btn in add transaction to be changed.
+5- ICONS for each category and show them everywhere.
+//6- Navigation instead of transaction.
+//7- Add title for each fragment like Add Transaction, stats, profile at the top.
+8- Change text family/style for whole app.
+//9- Add transaction screen,implement cross function
+10 - graphs in stats fragment
+//11 - show single theme irrescpective of light/dark mode - show always dark
+//12 - Budget set for all at once
+//add export data feature
+//empty recyelr view - no expense yet in home fragment
+//add more stats analytics
+//filter category wise expense

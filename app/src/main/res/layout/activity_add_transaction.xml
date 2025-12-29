@@ -6,15 +6,78 @@
     android:orientation="vertical"
     android:padding="16dp">
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="10dp"
+            android:layout_marginTop="5dp"
+            app:srcCompat="@drawable/ic_clear"
+            app:tint="@android:color/white"/>
+
+        <TextView
+        android:id="@+id/tvHeaderProfile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Add Transaction"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        android:paddingBottom="8dp" />
+    </LinearLayout>
+
+
+    <com.google.android.material.button.MaterialButtonToggleGroup
+        android:id="@+id/groupType"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:checkedButton="@id/btnExpense"
+        app:singleSelection="true">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnExpense"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_weight="1"
+            android:backgroundTint="@color/expense_red_inactive"
+            android:text="Expense"
+            android:textColor="@color/expense_text_inactive"
+            app:cornerRadius="14dp"
+            app:iconGravity="textStart"
+            app:iconTint="@color/expense_text_inactive" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnIncome"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_weight="1"
+            android:backgroundTint="@color/income_green_inactive"
+            android:text="Income"
+            android:textColor="@color/income_text_inactive"
+            app:cornerRadius="14dp"
+            app:iconGravity="textStart"
+            app:iconTint="@color/income_text_inactive" />
+
+    </com.google.android.material.button.MaterialButtonToggleGroup>
+
+
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Title">
+        android:hint="Title"
+        app:cornerRadius="24dp">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/etTitle"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            app:cornerRadius="24dp" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
@@ -42,7 +105,8 @@
             android:id="@+id/actCategory"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="none" />
+            android:inputType="none"
+            android:padding="10dp" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <!-- Transaction Type -->
@@ -50,8 +114,9 @@
         android:id="@+id/rgType"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
         android:orientation="horizontal"
-        android:layout_marginTop="12dp">
+        android:visibility="gone">
 
         <RadioButton
             android:id="@+id/rbIncome"
@@ -63,24 +128,62 @@
             android:id="@+id/rbExpense"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Expense"
-            android:layout_marginStart="24dp" />
+            android:layout_marginStart="24dp"
+            android:text="Expense" />
     </RadioGroup>
 
-    <TextView
-        android:id="@+id/tvSelectedDate"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Select Date"
-        android:textAppearance="@style/TextAppearance.Material3.BodyLarge"
-        android:padding="12dp"
-        android:layout_marginTop="12dp" />
+    <!--    <TextView-->
+    <!--        android:id="@+id/tvSelectedDate"-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:text="Select Date"-->
+    <!--        android:textAppearance="@style/TextAppearance.Material3.BodyLarge"-->
+    <!--        android:padding="12dp"-->
+    <!--        android:layout_marginTop="12dp" />-->
 
-    <Button
-        android:id="@+id/btnPickDate"
+    <!--    <Button-->
+    <!--        android:id="@+id/btnPickDate"-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:text="Pick Date" />-->
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cardDateContainer"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Pick Date" />
+        android:layout_height="56dp"
+        android:layout_marginTop="16dp"
+        app:cardCornerRadius="12dp"
+        app:strokeWidth="2dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp">
+
+            <TextView
+                android:id="@+id/tvSelectedDate"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Wed, 17 Dec 2025 @ 04:00 AM"
+                android:textColor="@color/white"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/ivCalendarIcon"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/ic_calendar"
+                app:tint="@android:color/white"/>
+
+
+        </LinearLayout>
+
+    </com.google.android.material.card.MaterialCardView>
 
 
     <!-- Save Button -->

@@ -1,17 +1,25 @@
 <resources>
-    <string name="app_name">Expense Tracker</string>
+    <string name="app_name">Spend Bhai</string>
 
     <string-array name="expense_categories">
         <item>Food</item>
         <item>Shopping</item>
-        <item>Transport</item>
+        <item>Travel</item>
         <item>Bills</item>
+        <item>Groceries</item>
+        <item>Office</item>
         <item>Entertainment</item>
         <item>Health</item>
         <item>Education</item>
         <item>Others</item>
     </string-array>
-    <!-- TODO: Remove or change this placeholder text -->
+
+    <string-array name="income_categories">
+        <item>Salary</item>
+        <item>Bonus</item>
+        <item>Extra Income</item>
+    </string-array>
+
     <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
 

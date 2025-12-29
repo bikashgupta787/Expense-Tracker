@@ -3,6 +3,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/homeFragment"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="?android:attr/windowBackground">
@@ -40,7 +41,7 @@
                 android:text="₹0"
                 android:textAppearance="@style/TextAppearance.Material3.TitleLarge"
                 android:textColor="@android:color/holo_red_dark"
-                android:textStyle="bold" />
+                android:fontFamily="@font/montserrat_semibold" />
         </LinearLayout>
     </com.google.android.material.card.MaterialCardView>
 
@@ -48,21 +49,27 @@
         android:id="@+id/rowMonthSelector"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        android:gravity="end"
+        android:layout_margin="20dp"
         android:orientation="horizontal"
-        app:layout_constraintEnd_toStartOf="@+id/btnSort"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/cardSummary">
 
         <TextView
             android:id="@+id/tvMonthSelector"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
             android:padding="4dp"
-            android:text="Dec, 2025 ▼"
+            android:text="Dec, 2025"
             android:textAppearance="@style/TextAppearance.Material3.TitleMedium"
             android:textStyle="bold" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:padding="2dp"
+            android:src="@drawable/ic_down"
+            app:tint="@android:color/white" />
     </LinearLayout>
 
     <!-- Sort Button -->
@@ -75,7 +82,7 @@
         android:background="?selectableItemBackgroundBorderless"
         android:padding="8dp"
         android:src="@drawable/ic_sort_btn"
-        app:tint="@android:color/black"
+        app:tint="@android:color/white"
         app:layout_constraintTop_toBottomOf="@+id/cardSummary"
         app:layout_constraintEnd_toEndOf="parent" />
 
@@ -98,6 +105,7 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="24dp"
         android:layout_marginBottom="10dp"
+        app:backgroundTint="?attr/colorPrimary"
         app:srcCompat="@android:drawable/ic_input_add"
         android:contentDescription="Add Transaction"
         app:layout_constraintBottom_toBottomOf="parent"

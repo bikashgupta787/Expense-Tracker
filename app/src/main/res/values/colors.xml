@@ -7,4 +7,38 @@
     <color name="budget_red">#F87171</color>
     <color name="progress_track">#1F2B27</color>
 
+    <color name="expense_red_active">#D32F2F</color>
+    <color name="expense_red_inactive">#331B1B</color>
+    <color name="expense_text_active">#FFFFFF</color>
+    <color name="expense_text_inactive">#8C8C8C</color>
+
+    <color name="income_green_active">#2F5D31</color>
+    <color name="income_green_inactive">#1B331B</color>
+    <color name="income_text_active">#FFFFFF</color>
+    <color name="income_text_inactive">#8C8C8C</color>
+
+    <color name="light_blue_primary">#092031</color>
+    <color name="light_blue_on_primary">#FFFFFF</color>
+
+    <color name="light_blue_secondary">#82C4FF</color>
+    <color name="light_blue_on_secondary">#000000</color>
+
+    <color name="light_black">#212121</color>
+
+    <!-- Category Colors -->
+    <color name="cat_food">#4CAF50</color>
+    <color name="cat_shopping">#FF9800</color>
+    <color name="cat_transport">#2196F3</color>
+    <color name="cat_office">#9C27B0</color>
+    <color name="cat_health">#F44336</color>
+    <color name="cat_bills">#607D8B</color>
+    <color name="cat_entertainment">#E91E63</color>
+    <color name="cat_salary">#2E7D32</color>
+    <color name="cat_bonus">#E2789A</color>
+
+    <!-- Default -->
+    <color name="cat_other">#757575</color>
+
+
+
 </resources>

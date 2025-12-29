@@ -21,9 +21,13 @@
             <!-- Category icon (optional) -->
             <ImageView
                 android:id="@+id/ivCategoryIcon"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:src="@drawable/ic_category" />
+                android:layout_width="46dp"
+                android:layout_height="46dp"
+                android:layout_marginEnd="12dp"
+                android:padding="6dp"
+                android:background="@drawable/icon_background_rounded"
+                android:scaleType="centerInside"
+                app:tint="@android:color/white" />
 
             <LinearLayout
                 android:layout_marginStart="12dp"
@@ -81,6 +85,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="₹4,000"
+                    android:fontFamily="@font/montserrat_semibold"
                     android:textAppearance="@style/TextAppearance.Material3.TitleSmall"
                     android:textStyle="bold" />
             </LinearLayout>
@@ -103,6 +108,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="₹967"
+                    android:fontFamily="@font/montserrat_semibold"
                     android:textAppearance="@style/TextAppearance.Material3.TitleSmall"
                     android:textStyle="bold" />
             </LinearLayout>
@@ -125,6 +131,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="₹3,033"
+                    android:fontFamily="@font/montserrat_semibold"
                     android:textAppearance="@style/TextAppearance.Material3.TitleSmall"
                     android:textStyle="bold" />
             </LinearLayout>

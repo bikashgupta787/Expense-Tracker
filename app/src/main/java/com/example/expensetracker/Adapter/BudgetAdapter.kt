@@ -1,9 +1,12 @@
 package com.example.expensetracker.Adapter
 
+import android.content.res.ColorStateList
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
-import com.example.expensetracker.BudgetUi
+import com.example.expensetracker.ViewModel.BudgetUi
+import com.example.expensetracker.CategoryUiConfig
 import com.example.expensetracker.databinding.ItemCategoryBudgetBinding
 import java.util.Locale
 
@@ -25,6 +28,17 @@ class BudgetAdapter(
             tvCategoryName.text = item.category
             // description optional - map category to desc if you want
             tvCategoryDesc.text = ""
+
+            ivCategoryIcon.setImageResource(
+                CategoryUiConfig.iconRes(item.category)
+            )
+
+            // CATEGORY COLOR
+            val colorRes = CategoryUiConfig.colorRes(item.category)
+            val color = ContextCompat.getColor(holder.itemView.context, colorRes)
+
+            holder.binding.ivCategoryIcon.backgroundTintList =
+                ColorStateList.valueOf(color)
 
             tvBudgetAmount.text = if (item.budgetAmount != null && item.budgetAmount > 0.0)
                 "₹${String.format(Locale.getDefault(), "%,.0f", item.budgetAmount)}" else "Not Set"
