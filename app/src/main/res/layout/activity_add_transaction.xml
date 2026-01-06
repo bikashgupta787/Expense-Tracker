@@ -19,7 +19,7 @@
             android:layout_marginEnd="10dp"
             android:layout_marginTop="5dp"
             app:srcCompat="@drawable/ic_clear"
-            app:tint="@android:color/white"/>
+            app:tint="@android:color/black"/>
 
         <TextView
         android:id="@+id/tvHeaderProfile"
@@ -105,6 +105,9 @@
             android:id="@+id/actCategory"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:focusable="false"
+            android:clickable="true"
+            android:cursorVisible="false"
             android:inputType="none"
             android:padding="10dp" />
     </com.google.android.material.textfield.TextInputLayout>
@@ -169,7 +172,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="Wed, 17 Dec 2025 @ 04:00 AM"
-                android:textColor="@color/white"
+                android:textColor="@color/black"
                 android:textSize="14sp"
                 android:textStyle="bold" />
 
@@ -178,7 +181,7 @@
                 android:layout_width="24dp"
                 android:layout_height="24dp"
                 android:src="@drawable/ic_calendar"
-                app:tint="@android:color/white"/>
+                app:tint="@android:color/black"/>
 
 
         </LinearLayout>
@@ -191,7 +194,7 @@
         android:id="@+id/btnSave"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_margin="20dp"
         android:text="Save Transaction" />
 
 </LinearLayout>

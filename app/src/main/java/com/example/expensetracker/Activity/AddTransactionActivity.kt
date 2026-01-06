@@ -45,19 +45,7 @@ class AddTransactionActivity : AppCompatActivity() {
             resources.getStringArray(R.array.income_categories)
         )
 
-
         binding.actCategory.setAdapter(expenseAdapter)
-        //binding.actCategory.setText("") // reset field
-
-
-
-//        val categories = resources.getStringArray(R.array.expense_categories)
-//        val categoryAdapter = ArrayAdapter(
-//            this,
-//            android.R.layout.simple_list_item_1,
-//            categories
-//        )
-//        binding.actCategory.setAdapter(categoryAdapter)
 
         updateSelectedDateText()
 
@@ -67,6 +55,12 @@ class AddTransactionActivity : AppCompatActivity() {
 
         binding.imageView.setOnClickListener {
             finish()
+        }
+
+        binding.actCategory.setOnFocusChangeListener { _, hasFocus ->
+            if (hasFocus) {
+                binding.actCategory.showDropDown()
+            }
         }
 
 

@@ -14,27 +14,49 @@
 <!--    <style name="Theme.ExpenseTracker" parent="Base.Theme.ExpenseTracker" />-->
 
 
-    <style name="Theme.ExpenseTracker" parent="Theme.Material3.Dark.NoActionBar">
+<!--    <style name="Theme.ExpenseTracker" parent="Theme.Material3.Dark.NoActionBar">-->
+
+<!--        &lt;!&ndash; Global font &ndash;&gt;-->
+<!--        <item name="android:fontFamily">@font/inter</item>-->
+<!--        <item name="fontFamily">@font/inter</item>-->
+
+<!--        &lt;!&ndash; Primary colors &ndash;&gt;-->
+<!--        <item name="colorPrimary">@color/light_blue_secondary</item>-->
+<!--        <item name="colorOnPrimary">@android:color/white</item>-->
+
+<!--        <item name="colorSecondary">@color/light_blue_secondary</item>-->
+<!--        <item name="colorOnSecondary">@android:color/white</item>-->
+
+<!--        &lt;!&ndash; Surface colors &ndash;&gt;-->
+<!--        <item name="colorSurface">@color/black</item>-->
+<!--        <item name="colorOnSurface">@android:color/white</item>-->
+
+<!--        <item name="colorSecondaryContainer">@color/light_blue_primary</item>-->
+
+<!--        <item name="android:windowBackground">@color/light_black</item>-->
+
+<!--    </style>-->
+
+    <style name="Theme.ExpenseTracker" parent="Theme.Material3.Light.NoActionBar">
 
         <!-- Global font -->
         <item name="android:fontFamily">@font/inter</item>
         <item name="fontFamily">@font/inter</item>
 
         <!-- Primary colors -->
-        <item name="colorPrimary">@color/light_blue_secondary</item>
+        <item name="colorPrimary">@color/light_blue_primary</item>
         <item name="colorOnPrimary">@android:color/white</item>
 
         <item name="colorSecondary">@color/light_blue_secondary</item>
         <item name="colorOnSecondary">@android:color/white</item>
 
-        <!-- Surface colors -->
-        <item name="colorSurface">@color/black</item>
-        <item name="colorOnSurface">@android:color/white</item>
+        <!-- Surface & background -->
+        <item name="colorSurface">@android:color/white</item>
+        <item name="colorOnSurface">@android:color/black</item>
 
-        <item name="colorSecondaryContainer">@color/light_blue_primary</item>
-
-        <item name="android:windowBackground">@color/light_black</item>
+        <item name="android:windowBackground">@android:color/white</item>
 
     </style>
+
 
 </resources>

@@ -95,8 +95,8 @@ class StatsFragment : Fragment() {
         binding.pieChart.apply {
             description.isEnabled = false
             isDrawHoleEnabled = true
-            holeRadius = 50f
-            transparentCircleRadius = 55f
+            holeRadius = 45f
+            transparentCircleRadius = 50f
             setDrawEntryLabels(false)
             setUsePercentValues(true)
 
@@ -106,7 +106,8 @@ class StatsFragment : Fragment() {
                 horizontalAlignment = Legend.LegendHorizontalAlignment.RIGHT
                 orientation = Legend.LegendOrientation.VERTICAL
                 setDrawInside(false)
-                textColor = Color.WHITE
+                textColor = Color.BLACK
+                textSize = 12F
             }
         }
     }

@@ -50,10 +50,23 @@ class HomeFragment : Fragment() {
         binding.rvTransactions.layoutManager = LinearLayoutManager(requireContext())
         binding.rvTransactions.adapter = adapter
 
-
         viewModel.sortedTransactions.observe(viewLifecycleOwner) { list ->
+
             adapter.submitList(list)
+
+            if (list.isEmpty()) {
+                binding.layoutEmptyState.visibility = View.VISIBLE
+                binding.rvTransactions.visibility = View.GONE
+            } else {
+                binding.layoutEmptyState.visibility = View.GONE
+                binding.rvTransactions.visibility = View.VISIBLE
+            }
         }
+
+
+//        viewModel.sortedTransactions.observe(viewLifecycleOwner) { list ->
+//            adapter.submitList(list)
+//        }
 
 
         viewModel.totalExpenseForMonth.observe(viewLifecycleOwner) { expense ->
@@ -97,6 +110,10 @@ class HomeFragment : Fragment() {
             }.show(childFragmentManager, "monthPicker")
         }
 
+
+        binding.btnAddFirstExpense.setOnClickListener {
+            startActivity(Intent(requireContext(), AddTransactionActivity::class.java))
+        }
 
 
         // FAB opens AddTransactionActivity

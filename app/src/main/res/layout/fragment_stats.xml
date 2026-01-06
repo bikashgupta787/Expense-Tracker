@@ -46,7 +46,7 @@
                 android:layout_gravity="center"
                 android:padding="2dp"
                 android:src="@drawable/ic_down"
-                app:tint="@android:color/white" />
+                app:tint="@android:color/black" />
         </LinearLayout>
     </LinearLayout>
 

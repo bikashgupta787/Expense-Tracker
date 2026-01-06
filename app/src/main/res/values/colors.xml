@@ -32,9 +32,12 @@
     <color name="cat_office">#9C27B0</color>
     <color name="cat_health">#F44336</color>
     <color name="cat_bills">#607D8B</color>
-    <color name="cat_entertainment">#E91E63</color>
-    <color name="cat_salary">#2E7D32</color>
+    <color name="cat_entertainment">#C1B346</color>
+    <color name="cat_salary">#009688</color>
+    <color name="cat_grocery">#66AB16</color>
+    <color name="cat_income">#D5E25E</color>
     <color name="cat_bonus">#E2789A</color>
+    <color name="cat_education">#A07DDB</color>
 
     <!-- Default -->
     <color name="cat_other">#757575</color>
