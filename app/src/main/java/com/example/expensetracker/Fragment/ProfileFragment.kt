@@ -5,9 +5,11 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.navigation.fragment.findNavController
 import com.example.expensetracker.R
 import com.example.expensetracker.databinding.FragmentProfileBinding
+import com.google.android.material.snackbar.Snackbar
 
 class ProfileFragment : Fragment() {
 
@@ -23,13 +25,6 @@ class ProfileFragment : Fragment() {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        // Navigate to BudgetFragment when Budget row clicked
-//        binding.rowBudget.setOnClickListener {
-//            parentFragmentManager.beginTransaction()
-//                .replace(R.id.fragmentContainer, BudgetFragment())
-//                .addToBackStack(null)
-//                .commit()
-//        }
 
         binding.rowBudget.setOnClickListener {
             findNavController().navigate(R.id.budgetFragment)
@@ -37,9 +32,32 @@ class ProfileFragment : Fragment() {
 
 
         binding.rowAbout.setOnClickListener {
+            findNavController().navigate(R.id.aboutUsFragment)
         }
 
         binding.rowShare.setOnClickListener {
+            Toast.makeText(
+                requireContext(),
+                "Stay tuned! This feature is coming soon 🚀",
+                Toast.LENGTH_SHORT
+            ).show()
+
+        }
+
+        binding.rowRate.setOnClickListener {
+            Toast.makeText(
+                requireContext(),
+                "Stay tuned! This feature is coming soon 🚀",
+                Toast.LENGTH_SHORT
+            ).show()
+        }
+
+        binding.rowTheme.setOnClickListener {
+            Toast.makeText(
+                requireContext(),
+                "Stay tuned! This feature is coming soon 🚀",
+                Toast.LENGTH_SHORT
+            ).show()
         }
     }
 

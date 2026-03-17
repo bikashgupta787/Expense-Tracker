@@ -31,13 +31,15 @@ interface TransactionDao {
     fun getTotalExpense(): LiveData<Double?>
 
     // returns only categories which have expense entries
-    @Query("""
+    @Query(
+        """
         SELECT category AS category, 
                SUM(amount) AS total 
         FROM transactions 
         WHERE type = 'Expense' 
         GROUP BY category
-    """)
+    """
+    )
     fun getExpenseTotalByCategory(): LiveData<List<CategoryExpense>>
 
     // Sum spent for a given category (only expenses)
@@ -58,58 +60,67 @@ interface TransactionDao {
     @Query("SELECT amount FROM category_budgets WHERE category = :category LIMIT 1")
     fun getBudgetAmountForCategory(category: String): LiveData<Double?>
 
-    // Get all budgets for a specific month
-//    @Query("SELECT * FROM category_budgets WHERE yearMonth = :yearMonth")
-//    fun getBudgetsForMonth(yearMonth: String): LiveData<List<CategoryBudget>>
-
     // Sum spent for category in given date range (for month)
-    @Query("""
+    @Query(
+        """
         SELECT SUM(amount) FROM transactions
         WHERE type = 'Expense' AND category = :category
         AND date >= :startMs AND date <= :endMs
-    """)
-    fun getTotalSpentForCategoryInRange(category: String, startMs: Long, endMs: Long): LiveData<Double?>
+    """
+    )
+    fun getTotalSpentForCategoryInRange(
+        category: String,
+        startMs: Long,
+        endMs: Long
+    ): LiveData<Double?>
 
     // Grouped sums for all categories within the month (optional for speed)
-    @Query("""
+    @Query(
+        """
         SELECT SUM(amount) FROM transactions
         WHERE type = 'Expense'
           AND date BETWEEN :startMs AND :endMs
-    """)
+    """
+    )
     fun getTotalExpenseInRange(startMs: Long, endMs: Long): LiveData<Double?>
 
-    @Query("""
+    @Query(
+        """
         SELECT SUM(amount) FROM transactions
         WHERE type = 'Income'
           AND date BETWEEN :startMs AND :endMs
-    """)
+    """
+    )
     fun getTotalIncomeInRange(startMs: Long, endMs: Long): LiveData<Double?>
 
     // total spent in range (startMs..endMs)
-    @Query("""
+    @Query(
+        """
     SELECT SUM(amount) FROM transactions
     WHERE type = 'Expense' AND date BETWEEN :startMs AND :endMs
-""")
+"""
+    )
     fun getTotalSpentInRange(startMs: Long, endMs: Long): LiveData<Double?>
 
-    // sum of budgets for given month
-//    @Query("SELECT SUM(amount) FROM category_budgets WHERE yearMonth = :yearMonth")
-//    fun getTotalBudgetForMonth(yearMonth: String): LiveData<Double?>
 
-    @Query("""
+    @Query(
+        """
     SELECT * FROM transactions
     WHERE date BETWEEN :startMs AND :endMs
     ORDER BY date DESC
-""")
+"""
+    )
     fun getTransactionsInRange(startMs: Long, endMs: Long): LiveData<List<Transaction>>
 
-    @Query("""
+    @Query(
+        """
     SELECT category, SUM(amount) as total
     FROM transactions
     WHERE type = 'Expense'
     AND date BETWEEN :startMs AND :endMs
     GROUP BY category
-""")
+"""
+    )
     fun getExpenseByCategoryInRange(startMs: Long, endMs: Long): LiveData<List<CategoryExpense>>
 
 

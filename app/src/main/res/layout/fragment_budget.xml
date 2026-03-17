@@ -137,12 +137,11 @@
         android:layout_height="wrap_content"
         android:text="Budgets"
         android:textAppearance="@style/TextAppearance.Material3.TitleLarge"
-        android:layout_marginBottom="8dp" />
+        android:layout_marginBottom="0dp" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvBudgets"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:clipToPadding="false"
-        android:paddingBottom="72dp" />
+        android:clipToPadding="false" />
 </LinearLayout>

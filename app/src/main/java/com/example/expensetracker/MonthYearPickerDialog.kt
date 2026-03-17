@@ -41,24 +41,13 @@ class MonthYearPickerDialog(
         binding.npYear.value = year
         binding.npYear.wrapSelectorWheel = false
 
-//        return AlertDialog.Builder(requireContext())
-//            .setTitle("Select month")
-//            .setView(binding.root)
-//            .setPositiveButton("OK") { _, _ ->
-//                val y = binding.npYear.value
-//                val m = binding.npMonth.value
-//                val ym = String.format(Locale.getDefault(), "%04d-%02d", y, m)
-//                listener(ym)
-//            }
-//            .setNegativeButton("Cancel", null)
-//            .create()
 
         return AlertDialog.Builder(requireContext())
             .setTitle("Select month")
             .setView(binding.root)
             .setPositiveButton("OK") { _, _ ->
-                val selectedMonth =  binding.npMonth.value + 1
-                val selectedYear =  binding.npYear.value
+                val selectedMonth = binding.npMonth.value + 1
+                val selectedYear = binding.npYear.value
 
                 val yearMonth = String.format(
                     Locale.getDefault(),

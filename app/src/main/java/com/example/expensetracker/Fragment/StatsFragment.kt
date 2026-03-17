@@ -43,7 +43,8 @@ class StatsFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         adapter = CategoryExpenseAdapter()
-        binding.rvCategoryExpenses.layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
+        binding.rvCategoryExpenses.layoutManager =
+            LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
         binding.rvCategoryExpenses.adapter = adapter
 
         setupPieChart()
@@ -56,13 +57,6 @@ class StatsFragment : Fragment() {
             updatePieChart(sorted)
         }
 
-//        viewModel.totalIncome.observe(viewLifecycleOwner) {
-//            binding.tvIncome.text = "₹${it ?: 0.0}"
-//        }
-
-//        viewModel.totalExpense.observe(viewLifecycleOwner) {
-//            binding.tvExpense.text = "₹${it ?: 0.0}"
-//        }
 
         viewModel.totalExpenseForMonth.observe(viewLifecycleOwner) { expense ->
             val value = expense ?: 0.0
@@ -86,7 +80,6 @@ class StatsFragment : Fragment() {
                 viewModel.setSelectedMonth(selectedYM)
             }.show(childFragmentManager, "monthPicker")
         }
-
 
 
     }

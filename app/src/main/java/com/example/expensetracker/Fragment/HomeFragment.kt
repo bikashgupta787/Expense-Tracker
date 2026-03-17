@@ -64,11 +64,6 @@ class HomeFragment : Fragment() {
         }
 
 
-//        viewModel.sortedTransactions.observe(viewLifecycleOwner) { list ->
-//            adapter.submitList(list)
-//        }
-
-
         viewModel.totalExpenseForMonth.observe(viewLifecycleOwner) { expense ->
             val value = expense ?: 0.0
             binding.tvExpense.text = "₹${String.format("%,.0f", value)}"
@@ -79,27 +74,6 @@ class HomeFragment : Fragment() {
             Log.d("MonthDebug", "selectedYearMonth = $ym")
 
         }
-
-
-
-//        binding.tvMonthSelector.setOnClickListener {
-//            val currentYM = viewModel.selectedYearMonth.value ?: viewModel.currentYearMonth()
-//
-//            MonthYearPickerDialog(currentYM) { selectedYM ->
-//                viewModel.setSelectedMonth(selectedYM)
-//
-//                // Formatting for UI: "2025-12" -> "Dec, 2025"
-//                val parts = selectedYM.split("-")
-//                val year = parts[0]
-//                val month = parts[1].toInt()
-//
-//                val monthName = Calendar.getInstance().apply {
-//                    set(Calendar.MONTH, month - 1)
-//                }.getDisplayName(Calendar.MONTH, Calendar.SHORT, Locale.getDefault())
-//
-//                binding.tvMonthSelector.text = "$monthName, $year ▼"
-//            }.show(childFragmentManager, "monthPicker")
-//        }
 
         binding.rowMonthSelector.setOnClickListener {
             val currentYM = viewModel.selectedYearMonth.value ?: viewModel.currentYearMonth()
@@ -125,11 +99,16 @@ class HomeFragment : Fragment() {
         binding.btnSort.setOnClickListener {
             viewModel.toggleSort()
             val newest = viewModel.sortNewestFirst.value ?: true
-            Toast.makeText(requireContext(), if (newest) "Showing newest first" else "Showing oldest first", Toast.LENGTH_SHORT).show()
+            Toast.makeText(
+                requireContext(),
+                if (newest) "Showing newest first" else "Showing oldest first",
+                Toast.LENGTH_SHORT
+            ).show()
         }
 
 
-        val itemTouch = object : ItemTouchHelper.SimpleCallback(0, ItemTouchHelper.LEFT or ItemTouchHelper.RIGHT) {
+        val itemTouch = object :
+            ItemTouchHelper.SimpleCallback(0, ItemTouchHelper.LEFT or ItemTouchHelper.RIGHT) {
             override fun onMove(
                 recyclerView: RecyclerView,
                 viewHolder: RecyclerView.ViewHolder,
@@ -206,7 +185,15 @@ class HomeFragment : Fragment() {
                     }
                 }
 
-                super.onChildDraw(c, recyclerView, viewHolder, dX, dY, actionState, isCurrentlyActive)
+                super.onChildDraw(
+                    c,
+                    recyclerView,
+                    viewHolder,
+                    dX,
+                    dY,
+                    actionState,
+                    isCurrentlyActive
+                )
             }
         }
 
@@ -224,7 +211,6 @@ class HomeFragment : Fragment() {
 
         return "$monthName, $year"
     }
-
 
 
     override fun onDestroyView() {
