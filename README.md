@@ -20,20 +20,6 @@ The app helps users manage daily expenses, track spending habits, set budgets, a
 
 ---
 
-# 📸 Screenshots
-
-| Home | Add Transaction | Budget |
-|------|----------------|---------|
-| Add screenshot here | Add screenshot here | Add screenshot here |
-
-| Stats | Profile |
-|-------|----------|
-| Add screenshot here | Add screenshot here |
-
-> Replace the placeholders above with your actual screenshots from the `/screenshots` folder.
-
----
-
 # 🛠 Tech Stack
 
 ### Language
