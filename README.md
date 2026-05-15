@@ -107,7 +107,7 @@ Feel free to fork the project and submit a pull request.
 
 # 👨‍💻 Developer
 
-**Your Name**
+**Bikash Gupta**
 
 ---
 
